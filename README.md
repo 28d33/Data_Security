@@ -88,9 +88,8 @@ A detailed data security analysis project conducted for JFin Payments, a rapidly
   PowerShell-based backup automation script:
   ```powershell
   Copy-Item "C:\Path\To\Data" "C:\Backup\Path\Data_$(Get-Date -Format yyyyMMdd)" -Recurse
-````
+``
 
----
 
 ## 🧰 Tools & Technologies
 
@@ -122,9 +121,4 @@ Expertise: Information Security, Compliance, Cryptography, Risk Management
 
 This project is provided for educational and informational purposes only.
 
-```
 
----
-
-
-```
