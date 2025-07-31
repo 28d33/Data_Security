@@ -126,5 +126,5 @@ This project is provided for educational and informational purposes only.
 
 ---
 
-Let me know if you want this turned into a GitHub `.md` file or exported as a PDF for reporting!
+
 ```
