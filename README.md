@@ -112,8 +112,11 @@ References
 🛡️ CIS Benchmarks, NIST SP 800-53
 
 Author
+
 Deekshith A
+
 Data Security Analyst at JFin Payments
 
 License
+
 This project is open for educational and professional demonstration purposes. For commercial or production use, please contact the author.
