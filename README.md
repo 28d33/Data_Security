@@ -105,7 +105,6 @@ Copy-Item "C:\Users\d33\VirtualBox VMs\Ububtu" "C:\Users\d33\VirtualBox VMs Back
 ```
 
 References
-🔐 E-D--Crypto GitHub Repo
 
 📄 GDPR, PCI DSS, ISO/IEC 27001 Documentation
 
