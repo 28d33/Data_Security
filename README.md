@@ -1,125 +1,119 @@
-# 🔐 Data Security Assessment – JFin Payments
+# Data Security Framework at JFin Payments
 
-A detailed data security analysis project conducted for JFin Payments, a rapidly growing online payment processor. This project covers strategic data governance, encryption and access control, system hardening, backup strategy, and compliance with global data protection standards.
+## Overview
 
----
+Welcome to the Data Security repository. This project was developed as part of a data security assessment for **JFin Payments**, a rapidly growing online payment processing company. The goal is to establish a comprehensive and practical approach to data security—covering confidentiality, integrity, and availability—aligned with global best practices and regulatory requirements like **GDPR**, **ISO/IEC 27001**, and **PCI DSS**.
 
-## 🧭 Project Overview
+## Table of Contents
 
-**Organization:** JFin Payments  
-**Role:** Data Security Analyst  
-**Location:** Los Angeles, California  
-**Scope:**  
-- Data governance and classification  
-- Confidentiality, integrity, and availability of critical data  
-- Regulatory compliance (GDPR, PCI-DSS, ISO 27001)  
-- Backup and retention strategies  
-- Disk and file encryption using custom C++ utilities  
+- [Project Scenario](#project-scenario)
+- [Key Focus Areas](#key-focus-areas)
+- [1. Data Governance](#1-data-governance)
+- [2. Data Confidentiality](#2-data-confidentiality)
+- [3. Data Integrity](#3-data-integrity)
+- [4. Data Availability](#4-data-availability)
+- [References](#references)
 
 ---
 
-## 📘 Sections
+## Project Scenario
 
-### 1. 🗂️ Data Governance
-
-- **Annual Data Classification:**  
-  Classify all datasets as *Confidential*, *Internal*, or *Public*
-
-- **System & Application Categorization:**  
-  Prioritize security controls for business-critical systems
-
-- **Regulatory Assessments:**  
-  Map policies to evolving standards like **GDPR**, **PCI DSS**, **RBI**, and **ISO/IEC 27001**
-
-#### 🔐 Classification Table
-| Data Type | Classification |
-|-----------|----------------|
-| Employee/customer profiles | Confidential |
-| Internal communications | Internal |
-| Technical diagrams/IP | Confidential |
-| Blogs and press releases | Public |
+As a **Data Security Analyst** at JFin Payments, you are responsible for protecting over 100,000 customer profiles across the US and Europe. The role involves working with various teams to define and implement data governance and security policies, encrypt sensitive data, monitor data integrity, and design backup and availability strategies.
 
 ---
 
-### 2. 🔏 Data Confidentiality
+## Key Focus Areas
 
-- **Disk Encryption:**  
-  Implemented custom C++ utilities using RSA-2048 key pair for disk image encryption  
-  GitHub: [E-D--Crypto](https://github.com/28d33/E-D--Crypto)
+This project emphasizes:
 
-- **Regulatory Policies Implemented:**
-  - Data Encryption Policy (AES-256, TLS 1.2+)
-  - Access Control with MFA and RBAC
-  - Data Retention and Secure Disposal
-  - Breach Notification within 72 hours (GDPR)
-  - Classification & Labeling
-  - Annual Employee Security Awareness Training
+- Developing and enforcing **strategic security policies**
+- **Encrypting** data using RSA and AES standards
+- **Hashing and validating** file integrity
+- Implementing **robust audit policies**
+- Establishing an effective **data backup strategy**
 
 ---
 
-### 3. 🔐 Data Integrity
+## 1. Data Governance
 
-- **Hash Verification (SHA-256 & SHA-1)** for critical DLL files  
-  - Verified file versions
-  - Detected unknown or unverifiable hashes
+### Strategic Policies Implemented:
 
-- **System Hardening (VM Security):**
-  - Strong password policy enforcement
-  - Account lockout thresholds
-  - Full audit logging for:
-    - Logon events
-    - Object access
-    - System events
-  - Hardened system options (UAC, guest/admin account disabling, LAN hash blocking)
+- **Data Classification**: Confidential, Internal, Public
+- **Application & System Classification**
+- **Annual Regulatory Assessments**
 
----
+### Benefits:
 
-### 4. 💾 Data Availability
+- Ensures regulatory compliance (e.g., GDPR, RBI)
+- Enhances risk management and incident readiness
+- Streamlines operational and security processes
 
-#### 🔁 Backup Strategy by Classification
+### Example Classification:
 
-| Classification | Frequency | Retention |
-|----------------|-----------|-----------|
-| **Confidential** | Real-time/Daily | 7 Years |
-| **Internal**     | Daily     | 90 Days  |
-| **Public**       | Weekly    | 30 Days  |
-
-- **Implementation:**  
-  PowerShell-based backup automation script:
-  ```powershell
-  Copy-Item "C:\Path\To\Data" "C:\Backup\Path\Data_$(Get-Date -Format yyyyMMdd)" -Recurse
-
-
-## 🧰 Tools & Technologies
-
-* **Language:** C++ (for RSA encryption)
-* **PowerShell:** For local data backup automation
-* **SHA Tools:** For file integrity checking
-* **Windows Security Policies:** Enforced via GPO and Local Security Policy
+| Dataset                      | Classification |
+|-----------------------------|----------------|
+| Employee/Customer Profiles  | Confidential   |
+| Company Emails/Newsletters  | Internal       |
+| Blog Repository             | Public         |
 
 ---
 
-## 📌 Compliance References
+## 2. Data Confidentiality
 
-* ✅ GDPR – General Data Protection Regulation
-* ✅ PCI DSS – Payment Card Industry Data Security Standard
-* ✅ ISO/IEC 27001 – Information Security Management Standard
-* ✅ DoD 5220.22-M – Data Sanitization Standard
+### Encryption Workflow
 
----
+- **RSA 2048-bit key pair generation**
+- **Disk encryption** using a custom C++ script
+- Encryption protocols: `AES-256`, `TLS 1.2+`
 
-## 👤 Author
+### Repository Link:
 
-**Deekshith A**
-
-Role: Data Security Analyst
-
-Expertise: Information Security, Compliance, Cryptography, Risk Management
+🔗 [Encryption Source Code and Binaries](https://github.com/28d33/E-D--Crypto)
 
 ---
 
-## 📄 License
+## 3. Data Integrity
 
-This project is provided for educational and informational purposes only.
+### File Integrity Verification:
 
+- SHA256 and SHA1 hash validation for `.dll` files
+- Identification of legitimate and suspicious file versions
 
+### Audit Policies Applied:
+
+- **Password Policy**: Min. length 12, history enforced, complexity enabled
+- **Account Lockout**: 5 attempts, 15-minute lockout
+- **Audit Logging**: Success and failure logs for login, system, and object access
+- **Security Options**: Disable default admin/guest, enforce UAC, disable LM hashes
+
+---
+
+## 4. Data Availability
+
+### Backup Strategies by Data Type:
+
+| Data Type   | Frequency   | Retention Period |
+|-------------|-------------|------------------|
+| Confidential | Real-time/Daily | 7 Years       |
+| Internal     | Daily       | 90 Days          |
+| Public       | Weekly/As Needed | 30 Days     |
+
+### Local Backup Command (PowerShell):
+
+```powershell
+Copy-Item "C:\Users\d33\VirtualBox VMs\Ububtu" "C:\Users\d33\VirtualBox VMs Backup\Ububtu_$(Get-Date -Format yyyyMMdd)" -Recurse
+```
+
+References
+🔐 E-D--Crypto GitHub Repo
+
+📄 GDPR, PCI DSS, ISO/IEC 27001 Documentation
+
+🛡️ CIS Benchmarks, NIST SP 800-53
+
+Author
+Deekshith A
+Data Security Analyst at JFin Payments
+
+License
+This project is open for educational and professional demonstration purposes. For commercial or production use, please contact the author.
