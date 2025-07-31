@@ -111,7 +111,9 @@ A detailed data security analysis project conducted for JFin Payments, a rapidly
 ## 👤 Author
 
 **Deekshith A**
+
 Role: Data Security Analyst
+
 Expertise: Information Security, Compliance, Cryptography, Risk Management
 
 ---
